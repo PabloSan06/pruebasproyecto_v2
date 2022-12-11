@@ -1,0 +1,23 @@
+
+{% block titulo %}
+    Contacto
+{% endblock titulo %}
+{% block contenido %}
+    
+    <form action="{% url "contacto" %}" method="post">
+        {% csrf_token %}
+        {% comment %} {{ contacto_form }} {% endcomment %}
+        {% comment %} <table>
+            {{ contacto_form.as_table }}
+        </table>  {% endcomment %}
+        {% comment %} <ul>
+            {{ contacto_form.as_ul }}
+        </ul>  {% endcomment %}
+        {{ contacto_form.as_table}} 
+        <input type="submit" value="Enviar">
+    </form>
+
+{% endblock contenido %}
+
+
+ 
